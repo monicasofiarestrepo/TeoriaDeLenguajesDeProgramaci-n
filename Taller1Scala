@@ -1,0 +1,19 @@
+class Vehiculo (tipo : String, marca: String, ano: Int){
+ def Descripcion() Unit = {
+    println("Vehículo de marca:" + this.marca + "\nTipo: " + this.tipo "" + "\nAño de fabricacion:" + this.ano)
+ }
+}
+
+class VehiculoAlquilado(inicioAlquiler: String, finAlquiler: String, nombre: String, precio: Int) extends Vehiculo (tipo, marca, ano){
+def Informacion() Unit = {
+    println("Vehículo de marca:" + super.marca + "\nTipo:" this.tipo + "\nAño de fabricación:" this.ano + "\nInicio de alquiler:" + this.inicioAlquiler + "\nFinal alquiler:" +this.finAlquiler "\nnombre cliente:" + this.nombre "\nprecio:" this.precio)
+
+}
+}
+
+object main (Arrays[String]): Unit = {
+  var Lambo = new Vehiculo("Mercedes", "Gwagon", 2016)
+  Lambo.Descripcion()
+  var MaseratiAlquilado new VehiculoAlquilado ("10 abr", "12 abril", "Moni", 1290000 )
+  MaseratiAlquilado.Informacion
+}
