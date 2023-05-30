@@ -27,20 +27,24 @@ object Main {
     }
 
     //cuarto punto
+    
     def processList(numbers: List[Int]): List[Int] = {
       def multiplyIfOdd(number: Int): Int = {
-        if (number % 2 != 0) number * 2 else number
+        //caso base
+        if (number %2 == 0) number
+          //si es un numero par, se detiene
+        else
+          number * 2
       }
 
-      val processedNumbers = numbers.map(multiplyIfOdd).distinct.sorted.reverse
-
-      processedNumbers
+      val ListaSort = numbers.map(multiplyIfOdd).distinct.sorted.reverse
+      ListaSort
     }
 
-    val inputList = List(1, 2, 3, 4, 5, 6, 7)
-    val outputList = processList(inputList)
+    val listaImput = List(1, 2, 3, 4, 5, 6, 7)
+    val listaOutput = processList(listaImput)
 
-    println(outputList)
+    println(listaOutput)
 
   }
 }
