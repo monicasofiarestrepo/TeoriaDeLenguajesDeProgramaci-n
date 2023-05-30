@@ -27,35 +27,20 @@ object Main {
     }
 
     //cuarto punto
-    def procesoALista(numeros: List[Int]): List[Int] = {
-
-      def multiplicarSiImpar(num: Int): Int = {
-        if (num % 2 != 0) num * 2
-        else num
+    def processList(numbers: List[Int]): List[Int] = {
+      def multiplyIfOdd(number: Int): Int = {
+        if (number % 2 != 0) number * 2 else number
       }
 
-      def sortDiferenteDescendiente(numeros: List[Int]): List[Int] = {
-        if (numeros.isEmpty) List()
-        else {
-          val head = numeros.head
-          val tail = numeros.tail
+      val processedNumbers = numbers.map(multiplyIfOdd).distinct.sorted.reverse
 
-          val numeroMult = multiplicarSiImpar(head)
-          val tailsita = sortDiferenteDescendiente(tail)
-
-          if (tailsita.contains(numeroMult))
-            tailsita
-          else numeroMult :: tailsita
-        }
-      }
-
-      val listaRes=sortDiferenteDescendiente(numeros)
-
-      listaRes
+      processedNumbers
     }
 
-    val Listica = List(1, 2, 3, 4, 5, 6, 7)
-    val Listota = listaRes(Listica)
-    print(Listota)
-}
+    val inputList = List(1, 2, 3, 4, 5, 6, 7)
+    val outputList = processList(inputList)
+
+    println(outputList)
+
+  }
 }
