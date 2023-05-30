@@ -28,24 +28,26 @@ object Main {
 
     //cuarto punto
 
-    def CuartoPunto(numbers: List[Int]): List[Int] = {
+    def cuartoPunto(listaNum: List[Int], listAcum: List[Int] = Nil): List[Int] = {
 
-      def multiplicaImpares(number: Int): Int = {
-        //caso base
-        if (number %2 == 0) number
-          //si es un numero par, se detiene
-        else
-          number * 2
+      listaNum match {
+        case Nil => listAcum.sorted.reverse
+        case head :: tail =>
+          val multImpar = if (head % 2 != 0) {
+            head * 2
+          }
+          else
+            head
+          val updatedAcc = if (!listAcum.contains(multImpar)) {
+            multImpar :: listAcum
+          }
+          else listAcum
+            cuartoPunto(tail, updatedAcc)
       }
-
-      val ListaSort = numbers.map(multiplicaImpares).distinct.sorted.reverse
-      ListaSort
     }
 
-    val listaImput = List(1, 2, 3, 4, 5, 6, 7)
-    val listaOutput = CuartoPunto(listaImput)
-
+    val listaInput = List(1, 2, 3, 4, 5, 6, 7)
+    val listaOutput = cuartoPunto(listaInput)
     println(listaOutput)
-
+    }
   }
-}
