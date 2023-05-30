@@ -27,9 +27,10 @@ object Main {
     }
 
     //cuarto punto
-    
-    def processList(numbers: List[Int]): List[Int] = {
-      def multiplyIfOdd(number: Int): Int = {
+
+    def CuartoPunto(numbers: List[Int]): List[Int] = {
+
+      def multiplicaImpares(number: Int): Int = {
         //caso base
         if (number %2 == 0) number
           //si es un numero par, se detiene
@@ -37,12 +38,12 @@ object Main {
           number * 2
       }
 
-      val ListaSort = numbers.map(multiplyIfOdd).distinct.sorted.reverse
+      val ListaSort = numbers.map(multiplicaImpares).distinct.sorted.reverse
       ListaSort
     }
 
     val listaImput = List(1, 2, 3, 4, 5, 6, 7)
-    val listaOutput = processList(listaImput)
+    val listaOutput = CuartoPunto(listaImput)
 
     println(listaOutput)
 
