@@ -38,11 +38,11 @@ object Main {
           }
           else
             head
-          val updatedAcc = if (!listAcum.contains(multImpar)) {
+          val updatedAcum = if (!listAcum.contains(multImpar)) {
             multImpar :: listAcum
           }
           else listAcum
-            cuartoPunto(tail, updatedAcc)
+            cuartoPunto(tail, updatedAcum)
       }
     }
 
