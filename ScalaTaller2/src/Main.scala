@@ -26,6 +26,7 @@ object Main {
       }
     }
 
+    
     //cuarto punto
 
     def cuartoPunto(listaNum: List[Int], listAcum: List[Int] = Nil): List[Int] = {
