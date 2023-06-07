@@ -1,5 +1,6 @@
 object Main {
 
+  
   def main(args: Array[String]): Unit = {
     //primer punto
     val listaInicial = List('a', 'B', 'c')
